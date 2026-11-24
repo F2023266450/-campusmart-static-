@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusMart - Buy & Sell</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <h2 class="logo">CampusMart</h2>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sell.html">Sell Item</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+
+        <h1>CampusMart Listings</h1>
+
+        <p>Find and save items available on your campus.</p>
+
+        <!-- Search and Filters -->
+        <div class="filters">
+
+            <!-- Search Input -->
+            <input
+                type="text"
+                id="search"
+                placeholder="Search listings..."
+                aria-label="Search listings"
+            >
+
+            <!-- Category Filter -->
+            <select id="category" aria-label="Select category">
+
+                <option value="All">All Categories</option>
+                <option value="Books">Books</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Stationery">Stationery</option>
+
+            </select>
+
+            <!-- Sorting -->
+            <select id="sort" aria-label="Sort listings">
+
+                <option value="newest">Newest</option>
+                <option value="low-high">Price: low → high</option>
+                <option value="high-low">Price: high → low</option>
+
+            </select>
+
+        </div>
+
+        <!-- Product Listings -->
+        <section
+            id="products"
+            class="products"
+            aria-label="Product listings"
+        ></section>
+
+        <!-- Empty Search Message -->
+        <p id="empty-message" hidden>
+            No listings match your search
+        </p>
+
+        <!-- Favourites Total -->
+        <div class="favorites-total" aria-live="polite">
+
+            <h3>
+                Total value of saved items:
+                Rs <span id="total">0</span>
+            </h3>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>&copy; 2026 CampusMart | UMT Lahore</p>
+
+    </footer>
+
+</body>
+</html>

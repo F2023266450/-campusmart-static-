@@ -1,0 +1,271 @@
+
+/* ==============================
+   CSS VARIABLES
+============================== */
+
+:root {
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-background: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #1e293b;
+    --color-muted: #475569;
+    --color-border: #cbd5e1;
+
+    --spacing: 16px;
+    --radius: 8px;
+}
+
+/* ==============================
+   DARK MODE
+============================== */
+
+[data-theme="dark"] {
+    --color-primary: #60a5fa;
+    --color-primary-hover: #93c5fd;
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-text: #f1f5f9;
+    --color-muted: #cbd5e1;
+    --color-border: #475569;
+}
+
+/* ==============================
+   GENERAL STYLING
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+h1, h2, h3 {
+    color: var(--color-text);
+}
+
+p {
+    color: var(--color-muted);
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: var(--spacing);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ==============================
+   SEARCH AND FILTERS
+============================== */
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.filters input,
+.filters select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+/* ==============================
+   KEYBOARD FOCUS
+============================== */
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+/* ==============================
+   PRODUCTS GRID
+============================== */
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* ==============================
+   PRODUCT CARD
+============================== */
+
+.card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    overflow-wrap: anywhere;
+}
+
+.card h3 {
+    color: var(--color-text);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.price {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* ==============================
+   SEARCH HIGHLIGHT
+============================== */
+
+mark {
+    background-color: #fef08a;
+    color: #1e293b;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* ==============================
+   FAVOURITE BUTTON
+============================== */
+
+.favorite-btn {
+    margin-top: 10px;
+}
+
+.favorite-btn.saved {
+    background-color: #15803d;
+}
+
+/* ==============================
+   EMPTY MESSAGE
+============================== */
+
+#empty-message {
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0;
+    color: #dc2626;
+}
+
+/* ==============================
+   SAVED ITEMS TOTAL
+============================== */
+
+.favorites-total {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (min-width: 600px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .filters {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
